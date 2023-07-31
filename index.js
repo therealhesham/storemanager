@@ -16,11 +16,12 @@ var XLSX = require('xlsx')
 app.get("/", (req,res)=>{
     res.header("Access-Control-Allow-Origin", "https://nateega.vercel.app/");
     res.header("Access-Control-Allow-Origin", "*");
+    res.header({"Access-Control-Allow-Credentials": true});
     var workbook = XLSX.readFile('./Stage_New_Search.xlsx');
     var sheet_name_list = workbook.SheetNames;
     var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
    
-// console.log("r")
+console.log("r")
 res.send(xlData)
 
 })
