@@ -15,7 +15,7 @@ var XLSX = require('xlsx')
 // console.log(obj.data)
 app.get("/", (req,res)=>{
     res.header("Access-Control-Allow-Origin", "https://nateega.vercel.app/");
-    res.header("Access-Control-Allow-Origin", "*");
+    
     res.header({"Access-Control-Allow-Credentials": true});
     var workbook = XLSX.readFile('./Stage_New_Search.xlsx');
     var sheet_name_list = workbook.SheetNames;
