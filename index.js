@@ -6,23 +6,47 @@ app = express()
 app.use(express.json())
 var xlsx = require('node-xlsx');
 const fs = require("fs")
-const cors = require('cors');
+const readline=require("readline")
 var XLSX = require('xlsx')
 // var xlsx = require('node-xlsx');
-app.use(cors({maxAge:24*60*60*1000,origin:"https://nateega.vercel.app/" ,exposedHeaders:'*',credentials:true,preflightContinue: true}));
-// var obj = xlsx.parse('./Stage_New_search.xlsx'); // parses a file
 
-// console.log(obj.data)
+// var obj = xlsx.parse('./Stage_New_search.xlsx'); // parses a file
+const { convertExcelToJson } = require('./convert');
+
+var xlsx = require('node-xlsx');
+// var fs = require('fs');
+
+// var csv = require('csv-parser')
+// var data = []
+
+// fs.createReadStream('test.csv')
+//   .pipe(csv())
+//   .on('data', function (row) {
+//     data.push(row)
+//   })
+//   .on('end', function () 
+//   {
+//   console.log(data)
+//     console.log('Data loaded')
+//   })
 app.get("/", (req,res)=>{
-    res.header("Access-Control-Allow-Origin", "https://nateega.vercel.app/");
-    
-    res.header({"Access-Control-Allow-Credentials": true});
-    var workbook = XLSX.readFile('./Stage_New_Search.xlsx');
-    var sheet_name_list = workbook.SheetNames;
-    var xlData = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]]);
-   
-console.log("r")
-res.send(xlData)
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("")
+    var csv = require('csv-parser')
+    var data = []
+
+fs.createReadStream('test.csv')
+  .pipe(csv())
+  .on('data', function (row) {
+    data.push(row)
+  })
+  .on('end', function () 
+  {
+    res.send(data) 
+    console.log('Data loaded')
+  })
+// console.log("r")
+
 
 })
 
