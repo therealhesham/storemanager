@@ -6,10 +6,10 @@ app = express()
 app.use(express.json())
 var xlsx = require('node-xlsx');
 const fs = require("fs")
-
+const cors = require('cors');
 var XLSX = require('xlsx')
 // var xlsx = require('node-xlsx');
-
+app.use(cors({maxAge:24*60*60*1000,origin:"https://nateega.vercel.app/" ,exposedHeaders:'*',credentials:true,preflightContinue: true}));
 // var obj = xlsx.parse('./Stage_New_search.xlsx'); // parses a file
 
 // console.log(obj.data)
