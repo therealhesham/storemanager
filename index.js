@@ -7,7 +7,7 @@ app.use(express.json())
 var xlsx = require('node-xlsx');
 const fs = require("fs")
 const readline=require("readline")
-var XLSX = require('xlsx')
+
 // var xlsx = require('node-xlsx');
 
 // var obj = xlsx.parse('./Stage_New_search.xlsx'); // parses a file
