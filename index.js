@@ -15,7 +15,7 @@ const { convertExcelToJson } = require('./convert');
 
 const xlsx = require('node-xlsx');
 // var fs = require('fs');
-
+const csv = require('csv-parser')
 // var csv = require('csv-parser')
 // var data = []
 
@@ -32,7 +32,7 @@ const xlsx = require('node-xlsx');
 app.get("/", (req,res)=>{
     res.header("Access-Control-Allow-Origin", "https://nateega.vercel.app");
     res.header("")
-    const csv = require('csv-parser')
+    
     const data = []
 
 fs.createReadStream('test.csv')
