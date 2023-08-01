@@ -4,7 +4,7 @@ const express =require("express")
 app = express()
 
 app.use(express.json())
-var xlsx = require('node-xlsx');
+const xlsx = require('node-xlsx');
 const fs = require("fs")
 const readline=require("readline")
 
@@ -13,7 +13,7 @@ const readline=require("readline")
 // var obj = xlsx.parse('./Stage_New_search.xlsx'); // parses a file
 const { convertExcelToJson } = require('./convert');
 
-var xlsx = require('node-xlsx');
+const xlsx = require('node-xlsx');
 // var fs = require('fs');
 
 // var csv = require('csv-parser')
@@ -32,8 +32,8 @@ var xlsx = require('node-xlsx');
 app.get("/", (req,res)=>{
     res.header("Access-Control-Allow-Origin", "https://nateega.vercel.app");
     res.header("")
-    var csv = require('csv-parser')
-    var data = []
+    const csv = require('csv-parser')
+    const data = []
 
 fs.createReadStream('test.csv')
   .pipe(csv())
