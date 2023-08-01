@@ -30,7 +30,7 @@ var xlsx = require('node-xlsx');
 //     console.log('Data loaded')
 //   })
 app.get("/", (req,res)=>{
-    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Origin", "https://nateega.vercel.app");
     res.header("")
     var csv = require('csv-parser')
     var data = []
