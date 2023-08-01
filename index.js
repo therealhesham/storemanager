@@ -43,7 +43,7 @@ fs.createReadStream('test.csv')
   .on('end', function () 
   {
     res.send(data) 
-    console.log('Data loaded')
+    // console.log('Data loaded')
   })
 // console.log("r")
 
