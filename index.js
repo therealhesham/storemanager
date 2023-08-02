@@ -12,8 +12,6 @@ const readline=require("readline")
 
 // var obj = xlsx.parse('./Stage_New_search.xlsx'); // parses a file
 const { convertExcelToJson } = require('./convert');
-
-const xlsx = require('node-xlsx');
 // var fs = require('fs');
 const csv = require('csv-parser')
 // var csv = require('csv-parser')
